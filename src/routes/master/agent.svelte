@@ -6,7 +6,7 @@
 	const toggle = () => isOpen = !isOpen;
 
 	onMount(async () => {
-		const url = 'http://165.22.61.192:9911';
+		const url = 'https://165.22.61.192:9911';
 		const body = {
 			command: 'LIST_AGEN'
 		};
