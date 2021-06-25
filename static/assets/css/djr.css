@@ -1,3 +1,18 @@
 .card-header {
     background-color: transparent;
 }
+
+.djr-fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+table tbody tr td {
+    vertical-align: middle;
+}
