@@ -1,6 +1,6 @@
 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
 	<div class='container-fluid'>
-		<a class='navbar-brand' href='#'>DJR Management</a>
+		<a class='navbar-brand' href='/'>DJR Management</a>
 		<button aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'
 						class='navbar-toggler'
 						data-bs-target='#navbarSupportedContent' data-bs-toggle='collapse' type='button'>
@@ -12,13 +12,14 @@
 					<a aria-current='page' class='nav-link active' href='/'>Home</a>
 				</li>
 				<li class='nav-item dropdown'>
-					<a aria-expanded='false' class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#'
+					<a aria-expanded='false' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'
 						 id='navbarDropdown'
 						 role='button'>
 						Master
 					</a>
 					<ul aria-labelledby='navbarDropdown' class='dropdown-menu'>
 						<li><a class='dropdown-item' href='/master/agent'>Agent</a></li>
+						<li><a class='dropdown-item' href='/master/product'>Product</a></li>
 					</ul>
 				</li>
 			</ul>
