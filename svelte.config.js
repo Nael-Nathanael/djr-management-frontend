@@ -10,7 +10,8 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					$components: resolve('src/components/')
+					$components: resolve('src/components/'),
+					$services: resolve('src/services/')
 				}
 			}
 		}
