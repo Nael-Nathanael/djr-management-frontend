@@ -1,6 +1,10 @@
 <script>
 	import AgentTable from '../../components/master/agent/AgentTable.svelte';
-	let toggle;
+	import AddButton from '../../components/buttons/AddButton.svelte';
+	import ModalAddAgent from '../../components/master/agent/ModalAddAgent.svelte';
+
+	let isOpen = false;
+	let requireUpdate = false;
 </script>
 
 <svelte:head>
@@ -13,12 +17,12 @@
 			<h2 class='m-0'>
 				Agent List
 			</h2>
-			<button class='btn btn-primary' on:click={toggle} type='button'>
-				<i class='fa fa-plus'></i> Add Agent
-			</button>
+			<AddButton on:click={() => isOpen = true} things='Agent' />
 		</div>
 		<div class='card-body'>
-			<AgentTable />
+			<AgentTable bind:requireUpdate />
 		</div>
 	</div>
 </div>
+
+<ModalAddAgent bind:isOpen bind:requireUpdate />

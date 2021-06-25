@@ -14,7 +14,7 @@
 	let idToShowDetail;
 	let idToEdit;
 
-	let requireUpdate = false;
+	export let requireUpdate = false;
 
 	$: if (requireUpdate) {
 		fetchDaftarAgen();

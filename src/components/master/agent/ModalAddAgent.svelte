@@ -2,54 +2,23 @@
 	import {
 		Modal
 	} from 'sveltestrap/src';
-	import { agentGetDetailById, agentEditById } from '$services/master/AgentService.svelte';
+	import { agentAdd } from '$services/master/AgentService.svelte';
 
-	export let idToEdit = false;
-	export let requireUpdate;
+	export let isOpen = false;
 
-	let idagen;
 	let nama;
 	let nomortelp;
 	let email;
 	let alamat;
 	let kota;
 
-	let isOpen = false;
-
-	$: if (idToEdit) {
-		fetchDetailAgen(idToEdit);
-	}
-
-	async function fetchDetailAgen(id) {
-		const {
-			email: email1,
-			idagen: idagen1,
-			nama: nama1,
-			nomortelp: nomortelp1,
-			alamat: alamat1,
-			kota: kota1,
-			responsecode
-		} = await agentGetDetailById(id);
-
-		if (responsecode === '0000') {
-			idagen = idagen1;
-			nama = nama1;
-			nomortelp = nomortelp1;
-			email = email1;
-			alamat = alamat1;
-			kota = kota1;
-			toggle();
-		}
-
-		idToEdit = null;
-	}
-
 	let toggle = () => isOpen = !isOpen;
+	export let requireUpdate = false;
 
-	async function submitChanges(event) {
+	async function submitAdd(event) {
 		event.preventDefault();
 
-		const updateresponse = await agentEditById(idagen,
+		const updateresponse = await agentAdd(
 			{
 				namaagen: nama,
 				nomortelp: nomortelp,
@@ -66,12 +35,8 @@
 	}
 </script>
 
-<Modal centered header='Edit Agent' {isOpen} {toggle}>
-	<form class='modal-body' on:submit={submitChanges}>
-		<div class='form-group mb-2'>
-			<label class='form-label' for='idagen'>ID</label>
-			<input class='form-control' id='idagen' readonly type='text' value='{idagen}'>
-		</div>
+<Modal centered header='Add Agent' {isOpen} {toggle}>
+	<form class='modal-body' on:submit={submitAdd}>
 		<div class='form-group mb-2'>
 			<label class='form-label' for='nama'>Name</label>
 			<input bind:value='{nama}' class='form-control' id='nama' required type='text'>

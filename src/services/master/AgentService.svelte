@@ -25,7 +25,7 @@
 	}
 
 	export async function agentEditById(id, data) {
-		console.log(
+		return djrfetch(
 			{
 				command: 'UPDATE_AGEN',
 				idagen: id,
@@ -33,11 +33,13 @@
 				...data
 			}
 		);
+	}
+
+	export async function agentAdd(data) {
 		return djrfetch(
 			{
-				command: 'UPDATE_AGEN',
-				idagen: id,
-				updateby: 'TODO',
+				command: 'ADD_AGEN',
+				crateby: 'TODO',
 				...data
 			}
 		);

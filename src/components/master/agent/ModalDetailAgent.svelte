@@ -4,7 +4,7 @@
 	} from 'sveltestrap/src';
 	import { agentGetDetailById } from '$services/master/AgentService.svelte';
 
-	export let idToShowDetail;
+	export let idToShowDetail = false;
 
 	let idagen;
 	let nama;
